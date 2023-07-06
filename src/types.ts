@@ -1,11 +1,5 @@
 import { NextRouter } from "next/router";
 
-type NonFunctionPropertyNames<T> = {
-    [K in keyof T]: T[K] extends Function ? never : K
-}[keyof T];
-
-type NonFunctionProperties<T> = Pick<T, NonFunctionPropertyNames<T>>;
-
 export interface PageProps {
     uid?: string;
     user?: User.Options;
@@ -89,6 +83,7 @@ export namespace User {
         email: '',
         password: '',
         role: 'user',
+        phone: '',
         image: Img.defaultProps,
     }
 }
@@ -169,7 +164,9 @@ export namespace Page {
         published: boolean;
         title: string;
         link: string;
+        category: any;
         content: string;
+        image: { [key: string]: any } | null;
         isPublished?(): boolean
     }
 
@@ -188,8 +185,10 @@ export namespace Page {
     export const defaultProps: Options = {
         published: false,
         title: '',
+        category: '',
         content: '',
-        link: ''
+        link: '',
+        image: null
     }
 }
 
@@ -265,7 +264,7 @@ export namespace Product {
     }
 
     export const variantDefaultProps = {
-        width: '',
+        size: '',
         height: '',
         weight: '',
         color: '',
@@ -296,7 +295,7 @@ export namespace Product {
 
 export interface IProductVariant {
     _id?: string;
-    width: string;
+    size: string;
     height: string;
     weight: string;
     color: string;
@@ -314,13 +313,13 @@ export type OrderStatus = 'accepted' | 'preparation' | 'completed' | 'shipped' |
 
 export type PaymentStatus = 'awaiting' | 'paid' | 'canceled';
 
-interface IProduct {
+export interface IProduct {
     product: Product.Options;
     variant: IProductVariant;
     original_price: number;
     promotion: number;
     price: number;
-    number: number;
+    quantity: number;
 }
 
 export namespace Order {
@@ -364,6 +363,10 @@ export namespace Carrier {
         name: string;
         description: string;
         price: number | string;
+        delivery_estimate: {
+            minimum: number,
+            maximum: number
+        },
         published: boolean;
     }
 
@@ -371,6 +374,10 @@ export namespace Carrier {
         name: '',
         description: '',
         price: '',
+        delivery_estimate: {
+            minimum: 2,
+            maximum: 4
+        },
         published: false
     }
 }
@@ -427,35 +434,31 @@ export const roles: Array<{ name: string, value: UserRole }> = [
     { name: 'Utilisateur', value: 'user' }
 ]
 
-export enum PaymentsStatus {
-    accepted = 'accepted',
-    preparation = 'in preparation',
-    shipped = 'shipped',
-    delivered = 'delivered'
-}
-
-export const paymentStatus = [
-    'accepted',
-    'preparation',
-    'shipped',
-    'delivered'
-]
-
 export namespace Address {
 
     export interface Options {
+        name: string,
+        lastname: string,
+        society: string;
         street: string;
+        complement: string;
         postcode: string;
         city: string;
-        department: string;
-        region: string;
+        department?: string;
+        region?: string;
+        phone: string;
     }
 
     export const defaultProps = {
+        name: '',
+        lastname: '',
+        society: '',
         street: '',
+        complement: '',
         postcode: '',
         city: '',
         department: '',
-        region: ''
+        region: '',
+        phone: ''
     }
 }
