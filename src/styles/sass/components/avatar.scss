@@ -1,0 +1,19 @@
+.av-avatar {
+    position            : relative;
+    display             : flex;
+    align-items         : center;
+    justify-content     : center;
+    flex-shrink         : 0;
+    width               : 34px;
+    height              : 34px;
+    font-size           : 1.4rem;
+    line-height         : 1;
+    border-radius       : var(--rounded-full);
+    overflow            : hidden;
+    user-select         : none;
+    color               : var(--white);
+    background          : var(--primary);
+    background-repeat   : no-repeat;
+    background-position : center;
+    background-size     : cover;
+}

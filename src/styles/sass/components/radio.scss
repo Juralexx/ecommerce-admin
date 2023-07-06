@@ -1,0 +1,81 @@
+.av-radio {
+    display          : inline-flex;
+    align-items      : center;
+    justify-content  : center;
+    position         : relative;
+    box-sizing       : border-box;
+    background-color : transparent;
+    outline          : 0;
+    border           : 0;
+    margin           : 0;
+    border-radius    : 0;
+    padding          : 0;
+    cursor           : pointer;
+    user-select      : none;
+    vertical-align   : middle;
+    appearance       : none;
+    text-decoration  : none;
+    color            : inherit;
+    padding          : 9px;
+    border-radius    : 50%;
+    color            : rgba(0, 0, 0, 0.6);
+
+    input {
+        cursor   : inherit;
+        position : absolute;
+        opacity  : 0;
+        width    : 100%;
+        height   : 100%;
+        top      : 0;
+        left     : 0;
+        margin   : 0;
+        padding  : 0;
+        z-index  : 1;
+
+        &:checked {
+            + span {
+                svg {
+                    &.dot {
+                        transform : scale(1);
+                        color     : var(--primary);
+                    }
+                    &.circle {
+                        color : var(--primary);
+                    }
+                }
+            }
+        }
+    }
+
+    span {
+        position : relative;
+        display  : flex;
+    }
+
+    svg {
+        &.circle {
+            user-select : none;
+            width       : 1em;
+            height      : 1em;
+            display     : inline-block;
+            fill        : currentColor;
+            flex-shrink : 0;
+            transition  : fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            font-size   : 1.5rem;
+        }
+        &.dot {
+            user-select : none;
+            width       : 1em;
+            height      : 1em;
+            display     : inline-block;
+            fill        : currentColor;
+            flex-shrink : 0;
+            transition  : fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            font-size   : 1.5rem;
+            left        : 0;
+            position    : absolute;
+            transition  : transform 150ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+            transform   : scale(0);
+        }
+    }
+}

@@ -1,0 +1,90 @@
+.av-textarea {
+    label {
+        display        : block;
+        font-weight    : 500;
+        font-size      : 1rem;
+        line-height    : 1.5;
+        letter-spacing : 0.00938em;
+        margin-left    : 4px;
+        margin-bottom  : 8px;
+        color          : var(--text);
+
+        &.error {
+            color : var(--danger);
+        }
+        &.success {
+            color : var(--success);
+        }
+    }
+}
+
+.av-textarea-container {
+    font-weight      : 400;
+    font-size        : 1rem;
+    line-height      : 1.5;
+    letter-spacing   : 0.00938em;
+    color            : var(--text);
+    position         : relative;
+    cursor           : text;
+    display          : inline-flex;
+    align-items      : center;
+    background-color : var(--bg-two);
+    height           : auto;
+    min-height       : 70px;
+    border-radius    : var(--rounded-default);
+    width            : 100%;
+    border           : 1px solid var(--border);
+    position         : relative;
+
+    &::-webkit-resizer {
+        color : var(--primary);
+    }
+
+    &:focus-within {
+        box-shadow : 0 0 0 2px var(--primary);
+    }
+
+    textarea {
+        font               : inherit;
+        letter-spacing     : inherit;
+        color              : currentColor;
+        padding            : 4px 0;
+        border             : 0;
+        box-sizing         : content-box;
+        outline            : none;
+        background         : none;
+        min-height         : 70px;
+        max-height         : 150px;
+        min-width          : 0;
+        width              : 100%;
+        margin             : 0;
+        display            : block;
+        padding-left       : 15px;
+        padding-right      : 15px;
+        padding-top        : 10px;
+        padding-bottom     : 10px;
+        resize             : vertical;
+
+        &::placeholder {
+            color : var(--placeholder);
+        }
+    }
+
+    &.error {
+        border-color     : var(--danger);
+        background-color : rgba(var(--danger-rgb), 0.1);
+
+        svg {
+            color : var(--danger);
+        }
+    }
+
+    &.success {
+        border-color     : var(--success);
+        background-color : rgba(var(--success-rgb), 0.1);
+
+        svg {
+            color : var(--success);
+        }
+    }
+}

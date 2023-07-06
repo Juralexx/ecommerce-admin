@@ -1,0 +1,30 @@
+.av-selection-card {
+    position         : relative;
+    background-color : var(--bg-two);
+    padding          : 20px 20px 20px 60px;
+    border-radius    : var(--rounded-default);
+    border           : 1px solid var(--border);
+    cursor           : pointer;
+
+    &:hover,
+    &.active {
+        border : 1px solid var(--primary);
+        .radio {
+            svg {
+                color:var(--primary)
+            }
+        }
+    }
+
+    .radio {
+        position  : absolute;
+        left      : 10px;
+        top       : 10px;
+        transform : scale(1.2);
+    }
+
+    .card-title {
+        font-size   : 16px;
+        font-weight : 600;
+    }
+}

@@ -1,0 +1,50 @@
+.av-pagination-side {
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    padding         : 30px 0;
+    color           : var(--text);
+
+    .pagination {
+        display         : inline-flex;
+        align-items     : center;
+        justify-content : space-between;
+        width           : 100%;
+
+        .pagination-right {
+            display     : flex;
+            align-items : center;
+        }
+
+        .count {
+            margin-right : 10px;
+        }
+
+        a {
+            display         : flex;
+            align-items     : center;
+            justify-content : center;
+            height          : 36px;
+            width           : 36px;
+            margin          : 0 2px;
+            color           : var(--text);
+            float           : left;
+            border-radius   : var(--rounded-full);
+        
+            svg {
+                height  : 28px;
+                width   : 28px;
+                padding : 5px;
+            }
+
+            &:hover {
+                background-color : var(--bg-two);
+                color            : var(--primary);
+            }
+
+            &.disabled {
+                pointer-events : none;
+            }
+        }
+    }
+}

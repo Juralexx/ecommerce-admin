@@ -1,0 +1,123 @@
+.av-footer {
+    position   : relative;
+    width      : 100%;
+    background : var(--slate-50);
+    border-top : 1px solid var(--border);
+
+    h4 {
+        font-weight   : 700;
+        margin-bottom : 10px;
+    }
+
+    h5 {
+        font-weight    : 600;
+        font-size      : 16px;
+        margin-top     : 10px;
+        margin-bottom  : 7px;
+        letter-spacing : -0.6px;
+        color          : var(--title);
+    }
+
+    .footer-logo {
+        max-width : 180px;
+    }
+
+    .av-footer-top {
+        display         : flex;
+        align-items     : flex-end;
+        justify-content : space-between;
+        padding-bottom  : 30px;
+        margin-bottom   : 30px;
+        border-bottom   : 1px solid var(--border);
+
+        img {
+            max-width    : 100px;
+            margin-right : 30px;
+        }
+
+        .footer-social {
+            height : 32px;
+            width  : 32px;
+            margin : 0 10px 0 0;
+            cursor : pointer;
+
+            svg {
+                height : 32px;
+                width  : 32px;
+
+                &:hover {
+                    opacity : 0.8;
+                }
+            }
+        }
+    }
+
+    .av-footer-links {
+        margin-bottom : 30px;
+
+        a {
+            display     : block;
+            line-height : 28px;
+
+            &:hover {
+                color : var(--primary-dark);
+            }
+        }
+    }
+
+    .av-footer-infos {
+        position       : relative;
+        display        : flex;
+        flex-direction : column;
+        margin         : 0 auto;
+
+        .av-info {
+            position : relative;
+            padding  : 5px 0;
+
+            svg {
+                display      : inline-block;
+                height       : 16px;
+                width        : 16px;
+                margin-top   : -2px;
+                margin-right : 5px;
+            }
+        }
+    }
+
+    .av-footer-bottom {
+        width      : 100%;
+        text-align : right;
+        padding    : 20px 0;
+        margin-top : 45px;
+        border-top : 1px solid var(--border);
+
+        a {
+            display : inline-block;
+
+            &:hover {
+                border-bottom : 1px solid var(--text);
+            }
+        }
+    }
+
+    @media(max-width: 576px) {
+        text-align : center;
+
+        .av-footer-infos {
+            padding-left : 0;
+
+            .av-infos {
+                margin : 5px auto;
+            }
+
+            .opening {
+                justify-content : center;
+            }
+        }
+
+        .footer-logo {
+            margin : 0 auto;
+        }
+    }
+}

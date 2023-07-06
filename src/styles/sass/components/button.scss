@@ -1,0 +1,210 @@
+.av-btn {
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    position        : relative;
+    box-sizing      : border-box;
+    outline         : 0;
+    margin          : 0;
+    padding         : 8px 30px 7px;
+    cursor          : pointer;
+    user-select     : none;
+    text-decoration : none;
+    font-size       : 1rem;
+    font-weight     : 500;
+    text-transform  : none;
+    min-width       : 64px;
+    width           : auto;
+    border-radius   : var(--rounded-md);
+    transition      : background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    box-shadow      : none;
+    border          : 1px solid;
+
+    &.v-primary {
+        background-color : var(--primary);
+        color            : white;
+        border-color     : var(--primary);
+
+        &:hover {
+            background-color : var(--primary-dark);
+        }
+    }
+    &.v-secondary {
+        background-color : var(--secondary);
+        color            : white;
+        border-color     : var(--secondary);
+
+        &:hover {
+            background-color : var(--secondary-dark);
+        }
+    }
+    &.v-classic {
+        background-color : var(--bg-zero);
+        color            : var(--text);
+        border-color     : var(--border);
+
+        &:hover {
+            background-color : var(--bg-one);
+        }
+    }
+    &.v-default {
+        background-color : var(--slate-100);
+        color            : var(--text);
+        border-color     : var(--border);
+
+        &:hover {
+            background-color : var(--slate-200);
+        }
+    }
+    &.v-text {
+        background-color : transparent;
+        color            : var(--text);
+        border-color     : transparent;
+
+        &:hover,
+        &.active {
+            color            : var(--primary-dark);
+            background-color : rgba(var(--primary-light-rgb), 0.2);
+        }
+    }
+    &.v-colored {
+        background-color : rgba(var(--primary-rgb), 0.2);
+        color            : var(--primary-dark);
+        border-color     : transparent;
+
+        &:hover {
+            color            : var(--white);
+            background-color : var(--primary);
+        }
+    }
+    &.v-outline {
+        background-color : transparent;
+        color            : var(--primary-dark);
+        border-color     : var(--primary);
+
+        &:hover {
+            color            : var(--white);
+            background-color : var(--primary);
+        }
+    }
+    &.v-delete {
+        background-color : var(--danger);
+        color            : white;
+        border-color     : var(--danger);
+
+        &:hover {
+            background-color : rgba(var(--danger-rgb), 0.7);
+        }
+    }
+    &.v-success {
+        background-color : var(--success);
+        color            : white;
+        border-color     : var(--success);
+
+        &:hover {
+            color            : var(--success);
+            background-color : rgba(var(--success-rgb), 0.2);
+        }
+    }
+
+    &.fullwidth {
+        width : 100%;
+    }
+
+    &.no-padding {
+        padding: 8px 15px 7px;
+    }
+
+    &.is-link {
+        padding : 0;
+        a {
+            display         : flex;
+            align-items     : center;
+            justify-content : center;
+            width           : 100%;
+            padding         : 8px 30px 7px;
+        }
+
+        &.no-padding {
+            a {
+                padding: 8px 15px 7px;
+            }
+        }
+    }
+
+    &.small {
+        font-size : 0.8rem;
+        height    : 32px;
+    }
+    
+    svg {
+        color       : currentColor;
+        flex-shrink : 0;
+        width       : 20px;
+        height      : 20px;
+
+        &.start-icon {
+            margin : 0 10px 0 0;
+        }
+        &.end-icon {
+            margin : 0 0 0 10px;
+        }
+    }
+
+    &.selected {
+        background-color : var(--primary);
+        color            : white;
+        border-color     : var(--primary);
+
+        &:hover {
+            background-color : var(--primary-dark);
+        }
+    }
+
+    input {
+        position  : absolute;
+        top       : 0;
+        right     : 0;
+        margin    : 0;
+        padding   : 0;
+        opacity   : 0;
+        width     : 100%;
+        height    : 100%;
+        font-size : 0;
+        cursor    : pointer;
+        
+        &::-webkit-file-upload-button {
+            cursor : pointer;
+        }
+    }
+
+    &:active {
+        transform  : scale(0.98);
+        box-shadow : inset var(--shadow-sm);
+    }
+
+    &:disabled,
+    &.disabled {
+        cursor         : default;
+        pointer-events : none;
+        filter         : grayscale(1);
+    }
+}
+
+@media(max-width: 576px) {
+    .av-btn {
+        &.mobilefull {
+            flex-grow : 1;
+            width     : 100%;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .av-btn {
+        &.tabletfull {
+            flex-grow : 1;
+            width     : 100%;
+        }
+    }
+}

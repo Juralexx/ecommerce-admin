@@ -1,0 +1,78 @@
+.av-alert {
+    position         : relative;
+    display          : flex;
+    background-color : #161618;
+    transition       : box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius    : var(--rounded-default);
+    box-shadow       : none;
+    font-size        : 1rem;
+    line-height      : 1.5;
+    letter-spacing   : 0.01071em;
+    background-color : rgb(253, 237, 237);
+    padding          : 6px 16px;
+    overflow         : hidden;
+    backdrop-filter  : blur(10px);
+    transform-style  : preserve-3d;
+    margin-top       : 5px;
+}
+
+.av-alert .error {
+    color            : var(--danger-color);
+    background-color : rgba(var(--danger-rgb), 0.5);
+}
+
+.av-alert .error svg {
+    color : var(--danger);
+}
+
+.av-alert.success {
+    color            : var(--success-color);
+    background-color : rgba(var(--success-rgb), 0.5);
+}
+
+.av-alert.success svg {
+    color : var(--success);
+}
+
+.av-alert .warning {
+    color            : var(--warning-color);
+    background-color : rgba(var(--warning-rgb), 0.5);
+}
+
+.av-alert .warning svg {
+    color : var(--warning);
+}
+
+.av-alert .info {
+    color            : var(--info-color);
+    background-color : rgba(var(--info-rgb), 0.5);
+}
+
+.av-alert .info svg {
+    color : var(--info);
+}
+
+.av-alert .alert-icon {
+    display      : flex;
+    margin-right : 12px;
+    padding      : 7px 0;
+    font-size    : 22px;
+    opacity      : 0.9;
+}
+
+.av-alert svg {
+    user-select : none;
+    width       : 1em;
+    height      : 1em;
+    display     : inline-block;
+    fill        : currentColor;
+    flex-shrink : 0;
+    transition  : fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size   : inherit;
+}
+
+.av-alert .alert-content {
+    padding   : 8px 0;
+    min-width : 0;
+    overflow  : auto;
+}

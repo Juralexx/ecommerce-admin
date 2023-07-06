@@ -1,0 +1,79 @@
+.av-boolean {
+    position : relative;
+
+    label {
+        display        : block;
+        font-weight    : 400;
+        font-size      : 1rem;
+        line-height    : 1.5;
+        letter-spacing : 0.00938em;
+        margin-left    : 4px;
+        margin-bottom  : 8px;
+        color          : var(--text);
+        position       : relative;
+        user-select    : none;
+
+        &.error {
+            color : var(--danger);
+        }
+        &.success {
+            color : var(--success);
+        }
+    }
+
+    input {
+        position : absolute;
+        left     : -999vw;
+        opacity  : 0;
+    }
+}
+
+.av-boolean-container {
+    background    : var(--bg-zero);
+    padding       : 4px;
+    border-radius : var(--rounded-default);
+    border-style  : solid;
+    border-width  : 1px;
+    border-color  : var(--border);
+    display       : flex;
+    overflow      : hidden;
+    flex-wrap     : wrap;
+    outline       : none;
+    transition    : box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+    &:focus-within {
+        box-shadow : 0 0 0 2px var(--primary);
+    }
+}
+
+.av-boolean-button {
+    background-color : transparent;
+    border           : 1px solid var(--bg-zero);
+    position         : relative;
+    user-select      : none;
+    z-index          : 2;
+    flex             : 1 1 50%;
+    padding-top      : 6px;
+    padding-bottom   : 6px;
+    text-align       : center;
+    cursor           : pointer;
+
+    &.active {
+            background-color : var(--bg-one);
+            border           : 1px solid var(--border);
+        &.true {
+            color : var(--primary-light);
+        }
+        &.false {
+            color : var(--danger);
+        }
+    }
+    &:hover {
+        &.true {
+            color : var(--primary-light);
+        }
+        &.false {
+            color : var(--danger);
+        }
+    }
+}

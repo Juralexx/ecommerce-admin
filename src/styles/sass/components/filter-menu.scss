@@ -1,0 +1,134 @@
+.av-filter-menu-container {
+    position : relative;
+    display  : inline-block;
+    z-index  : 1;
+
+    button {
+        height : 40px;
+    }
+}
+
+.av-filter-menu {
+    position         : absolute;
+    top              : 120%;
+    left             : -10px;
+    border-radius    : var(--rounded-default);
+    background-color : var(--bg-zero);
+    border           : 1px solid var(--border);
+    min-width        : 300px;
+    box-shadow       : var(--shadow-lg);
+    visibility       : hidden;
+    opacity          : 0;
+    visibility       : hidden;
+
+    &.active {
+        opacity    : 1;
+        visibility : visible;
+        transition : opacity 384ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 256ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+
+    .content {
+        padding : 10px 15px;
+    }
+
+    > .cells {
+        padding    : 15px 15px 15px 25px;
+        border-top : 1px solid var(--border);
+
+        label {
+            width : 100%;
+        }
+
+        &:hover {
+            background-color : var(--bg-one);
+        }
+    }
+}
+
+.av-filter-menu-btns {
+    display        : flex;
+    flex-direction : row;
+    gap            : 10px;
+    width          : 100%;
+    padding        : 10px 15px;
+}
+
+.av-filters-displayer {
+    display       : flex;
+    align-items   : center;
+    width         : 100%;
+    height        : 40px;
+    padding-top   : 1px;
+    background    : transparent;
+    overflow      : auto;
+    overflow-y    : hidden;
+    margin-bottom : 15px;
+
+    &::-webkit-scrollbar {
+        height : 4px;
+    }
+
+    > div {
+        margin-right : 5px;
+        cursor       : pointer;
+        &:hover {
+            background-color : var(--bg-one);
+        }
+    }
+
+    svg {
+        margin-left   : 5px;
+        margin-bottom : -1px;
+    }
+}
+
+.av-submenu {
+    border-top : 1px solid var(--border);
+    overflow      : hidden;
+
+    .filter-submenu-header {
+        height          : 50px;
+        width           : 100%;
+        padding         : 4px 15px 4px 25px;
+        display         : inline-flex;
+        align-items     : center;
+        justify-content : space-between;
+        cursor          : pointer;
+        vertical-align  : middle;
+        font-weight     : 400;
+
+        &:hover {
+            background-color : var(--bg-one);
+        }
+    }
+
+    .cells-container {
+        max-height : 0;
+        transition : all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;;
+        opacity    : 0;
+        visibility : hidden;
+    }
+
+    .cells {
+        padding : 12px 15px 12px 45px;
+
+        label {
+            width : 100%;
+        }
+
+        &:hover {
+            background-color : var(--bg-one);
+        }
+    }
+
+    &.active {
+        max-height : 500px;
+        overflow   : visible;
+
+        .cells-container {
+            max-height : 500px;
+            opacity    : 1;
+            visibility : visible;
+        }
+    }
+}

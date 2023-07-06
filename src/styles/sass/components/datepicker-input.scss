@@ -1,0 +1,93 @@
+.av-datepikcer-input-wrapper {
+    position        : fixed;
+    top             : 0;
+    right           : 0;
+    bottom          : 0;
+    left            : 0;
+    overflow-x      : hidden;
+    overflow-y      : auto;
+    visibility      : visible;
+    z-index         : 100000000000;
+    display         : flex;
+    align-items     : center;
+
+    .datepicker {
+        top       : 50%;
+        left      : 50%;
+        transform : translate(-50%, -50%);
+        z-index   : 1000000000000;
+    }
+}
+
+.av-datepicker-input {
+    position      : absolute;
+    background    : var(--bg-zero);
+    border-radius : var(--rounded-default);
+    z-index       : 700;
+    box-shadow : var(--shadow-md), var(--shadow-relief);
+
+    .rdp {
+        .selected {
+            background-color : var(--primary);
+            color            : var(--text);
+            border-radius    : 5px;
+            border           : none;
+            outline          : none;
+        }
+
+        .today {
+            background-color : var(--bg-two);
+            border-radius    : var(--rounded-default);
+        }
+
+        .rdp-button {
+            border-radius    : var(--rounded-default);
+            &:hover {
+                background-color : var(--primary);
+                border           : none;
+                color            : var(--text);
+            }
+        }
+
+        .rdp-caption_label {
+            margin  : 0;
+            padding : 5px;
+        }
+
+        .rdp-nav {
+            display : flex;
+
+            .rdp-nav_button_previous, .rdp-nav_button_next {
+                display       : flex;
+                align-items   : center;
+                background    : var(--bg-two);
+                margin        : 0 3px;
+                transform     : scale(1);
+
+                svg {
+                    bottom : unset;
+                    right  : unset;
+                }
+
+                &:hover {
+                    background-color : rgba(var(--primary-rgb), 0.8);
+                    svg {
+                        color : var(--white);
+                    }
+                }
+
+                &:active {
+                    transform  : scale(0.9);
+                    box-shadow : none;
+                }
+            }
+        }
+
+        h2 {
+            &:before, &:after {
+                content : none;
+                display : none;
+            }
+        }
+    }
+}

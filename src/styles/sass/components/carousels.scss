@@ -1,0 +1,104 @@
+.av-products-carousel {
+    position         : relative;
+    width            : 100%;
+    height           : auto;
+    overflow         : hidden;
+    background-color : var(--slate-50);
+    border-radius    : var(--rounded-md);
+    border           : 1px solid var(--border);
+
+    img {
+        cursor : pointer;
+    }
+
+    .av-products-carousel-top {
+        position : relative;
+        height   : 400px;
+        width    : 100%;
+        padding  : 10px 0;
+        margin   : 0;
+    }
+
+    .av-products-slide {
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        width           : 100%;
+
+        img {
+            max-height : 380px;
+            height     : auto;
+            width      : auto;
+            margin     : 0 auto;
+        }
+    }
+
+    .swiper__button {
+        width            : auto;
+        height           : auto;
+        padding          : 7px;
+        color            : var(--text);
+        background-color : var(--body);
+        box-shadow       : var(--shadow-sm);
+        border-radius    : var(--rounded-full);
+        cursor           : pointer;
+        z-index          : 1;
+
+        &.previous {
+            position      : absolute;
+            top           : 50%;
+            left          : 10px;
+            transform     : translateY(-50%);
+
+            @media(max-width: 480px) {
+                left : -10px;
+            }
+        }
+
+        &.next {
+            position  : absolute;
+            top       : 50%;
+            right     : 10px;
+            transform : translateY(-50%);
+
+            @media(max-width: 480px) {
+                right : -10px;
+            }
+        }
+
+        svg {
+            height : 24px;
+            width  : 24px;
+        }
+    }
+
+    .caption {
+        position   : absolute;
+        bottom     : 20px;
+        max-width  : 95%;
+        color      : white;
+        text-align : justify;
+    }
+
+    .av-products-carousel-thumbs {
+        height           : 20%;
+        box-sizing       : border-box;
+        padding          : 10px;
+        height           : 80px;
+        background-color : var(--slate-50);
+
+        .swiper-slide {
+            width    : 20%;
+            height   : 100%;
+            overflow : hidden;
+
+            img {
+                border-radius : 0;
+            }
+        }
+
+        .swiper-slide-active {
+            opacity: 1;
+        }
+    }
+}

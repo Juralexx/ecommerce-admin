@@ -1,0 +1,56 @@
+.av-sidemenu {
+    position   : fixed;
+    bottom     : 0;
+    top        : 0;
+    left       : 0;
+    right      : 0;
+    width      : 100vw;
+    height     : 100vh;
+    z-index    : 700;
+    visibility : hidden;
+    opacity    : 0;
+    transition : .3s ease;
+    z-index    : 1500;
+
+    .av-side {
+        position   : fixed;
+        right      : -102%;
+        bottom     : 0;
+        top        : 40px;
+        height     : calc(100% - 40px);
+        width      : 100%;
+        max-width  : 500px;
+        padding    : 25px;
+        background : var(--content);
+        box-shadow : var(--shadow-right);
+        transition : .3s ease;
+        overflow-y : auto;
+
+        @media(max-width: 768px) {
+            max-width : 100%;
+        }
+    }
+
+    &.active {
+        visibility : visible;
+        opacity    : 1;
+        transition : .3s ease;
+        .av-side {
+            right      : 0;
+            transition : .3s ease;
+        }
+    }
+
+    .cross {
+        height        : 34px;
+        width         : 34px;
+        padding       : 5px;
+        color         : var(--primary);
+        border-radius : var(--rounded-full);
+        cursor        : pointer;
+
+        &:hover {
+            background-color : rgba(var(--primary-rgb), 0.1);
+        }
+    }
+}

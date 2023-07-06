@@ -1,0 +1,90 @@
+.av-stepper {
+    display        : flex;
+    flex-direction : row;
+    align-items    : flex-start;
+}
+
+.av-stepper-item {
+    padding-left  : 8px;
+    padding-right : 8px;
+    flex          : 1;
+    position      : relative;
+    cursor        : pointer;
+
+    &.disabled {
+        user-select    : none;
+        pointer-events : none;
+        filter         : grayscale(1);
+    }
+
+    &:after {
+        background  : var(--slate-200);
+        content     : "";
+        height      : 2px;
+        left        : 50%;
+        margin-left : 2.25rem;
+        position    : absolute;
+        top         : 1rem;
+        width       : calc(100% - 4.5rem);
+    }
+
+    &.active {
+        color : var(--primary-dark);
+    }
+
+    &.checked {
+        &:after {
+            background-color : var(--primary);
+        }
+    }
+
+    &:last-child {
+        &:after {
+            content : none;
+        }
+    }
+}
+
+.av-stepper-item-inner {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+}
+
+.av-stepper-item-icon {
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    user-select     : none;
+    width           : 30px;
+    height          : 30px;
+    fill            : currentcolor;
+    background      : var(--primary);
+    color           : white;
+    border-radius   : var(--rounded-full);
+    flex-shrink     : 0;
+    font-size       : 1.2rem;
+
+    svg {
+        color : white;
+    }
+}
+
+.av-stepper-item-text {
+    display     : block;
+    margin-top  : 6px;
+    font-weight : 600;
+    line-height : 1.43;
+    font-size   : 1.1rem;
+}
+
+.av-stepper-connector {
+    flex       : 1 1 auto;
+    position   : absolute;
+    top        : 12px;
+    width      : 90%;
+    height     : 1px;
+    left       : calc(-50% + 20px);
+    right      : calc(50% + 20px);
+    background : var(--slate-200);
+}
